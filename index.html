@@ -9,11 +9,14 @@
   }
 
   .text {
-    margin-top: 1em;
     white-space: pre;
     height: 3em;
     font-size: 9vw;
     margin-left: 25%;
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
   }
   .text::after {
     content: '|';
