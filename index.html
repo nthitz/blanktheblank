@@ -97,10 +97,8 @@ function animate() {
         .delay(delay)
         .duration(sentence.length * 50)
         .tween('text', deleteTextTween)
+        .each('end', animate)
     })
-
-  animateTimeout = setTimeout(animate, duration + delay * 3)
-
 }
 
 function typeWriterTween(d, i) {
