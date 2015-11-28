@@ -23,14 +23,25 @@ function chooseRandom(array) {
 
 
 function init() {
-  text = d3.select('body').append('div').attr('class','text')
-  d3.select('body').on('click', animate)
-  animate()
+  text = d3.select('div.text')
+  d3.select('body').on('click', function() { reset(0) })
+  reset(1000)
+}
+
+function reset(delay) {
+  var data = text.text()
+  text.datum(data)
+
+  var duration = data.length * 50
+  text.transition()
+    .delay(delay)
+    .duration(duration)
+    .tween('text', deleteTextTween)
+    .each('end', animate)
 }
 
 
 function animate() {
-  clearTimeout(animateTimeout)
   var sentence = makeSentence()
   var duration = sentence.length * 100
   var delay = 1000
