@@ -1,0 +1,44 @@
+html, body {
+  font-family: 'Anonymous Pro', monospace;
+  background: #001100;
+  color: #00C354;
+}
+
+.text {
+  white-space: pre;
+  height: 3em;
+  font-size: 9vw;
+  margin-left: 25%;
+  top: 50%;
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.text::after {
+  content: '|';
+  -webkit-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+.text::before {
+  content: '>';
+  margin-left: -0.5em;
+}
+
+
+@keyframes "blink" {
+  from, to {
+    color: inherit;
+  }
+  50% {
+    color: transparent;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: inherit;
+  }
+  50% {
+    color: transparent;
+  }
+}
