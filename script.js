@@ -23,17 +23,16 @@ function chooseRandom(array) {
 
 function init() {
   text = d3.select('div.text')
-  d3.select('body').on('click', function() { reset(0) })
-  reset(1000)
+  reset()
 }
 
-function reset(delay) {
+function reset() {
   var data = text.text()
   text.datum(data)
 
   var duration = data.length * 50
   text.transition()
-    .delay(delay)
+    .delay(1000)
     .duration(duration)
     .tween('text', deleteTextTween)
     .each('end', animate)
