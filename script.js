@@ -42,20 +42,27 @@ function reset(delay) {
 
 
 function animate() {
+  var typeDuration = 1500
+  var delayDuration = 1000
+  var deleteDuration = 750
+
+  var timeMod = typeDuration + deleteDuration * 2 + deleteDuration
+  var now = Date.now()
+  var nowToNearestMod = Math.floor(now / timeMod) * timeMod
+  Math.seedrandom(nowToNearestMod)
   var sentence = makeSentence()
   var duration = sentence.length * 100
-  var delay = 1000
   text.datum(sentence)
     .transition()
-    .delay(delay)
-    .duration(duration)
+    .delay(delayDuration)
+    .duration(typeDuration)
     .ease(d3.ease('ease-out'))
     .tween('text', typeWriterTween)
     .each('end', function() {
       text
         .transition()
-        .delay(delay)
-        .duration(sentence.length * 50)
+        .delay(delayDuration)
+        .duration(deleteDuration)
         .tween('text', deleteTextTween)
         .each('end', animate)
     })
