@@ -23,6 +23,7 @@ function chooseRandom(array) {
 
 function init() {
   text = d3.select('div.text')
+  d3.select('.fullscreen').on('click', fullscreen)
   reset()
 }
 
@@ -77,5 +78,20 @@ function deleteTextTween(d, i) {
   };
 }
 
+function fullscreen() {
+  launchIntoFullscreen(document.documentElement)
+}
+// Find the right method, call on correct element
+function launchIntoFullscreen(element) {
+  if(element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if(element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  }
+}
 
 init()

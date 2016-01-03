@@ -31,7 +31,13 @@ html, body {
   content: '>';
   margin-left: -0.5em;
 }
-
+.fullscreen {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.fullscreen:hover {
+  opacity: 1;
+}
 
 @keyframes "blink" {
   from, to {
