@@ -2,7 +2,8 @@
 var verbs = ['hack', 'own', 'sell', 'buy', 'destroy', 'save', 'override',
   'datamine', 'surveil', 'monitor', 'countersurveil', 'subvert', 'study',
   'oppress', 'suppress', 'enslave', 'consume', 'censor', 'subdue', 'control',
-  'conceal', 'conquer', 'silence', 'download', 'create', 'bailout', 'wipeout']
+  'conceal', 'conquer', 'silence', 'download', 'create', 'bailout', 'wipeout',
+  'monetize']
 
 var nouns = ['planet', 'network', 'internet', 'law', 'government', 'enemy',
   'power core', 'infrastructure', 'airwaves', 'oceans', 'user data', 'future',
